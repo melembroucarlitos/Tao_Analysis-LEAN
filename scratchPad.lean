@@ -47,30 +47,75 @@ def exponantiate (m n : myNat) : myNat :=
 
 --TPIL
 
--- theorem add_zero
--- theorem add_succ
+-- Intensional equality
+theorem zero_add (n : myNat) : add myNat.zero n = n := rfl
+theorem succ_add (m n : myNat) : add (myNat.succ m) n = myNat.succ (add m n) := rfl
 
-theorem zero_add (n : myNat) : add myNat.zero n = n :=
-  myNat.rec_on n
+theorem add_zero (m : myNat) : add m myNat.zero = m :=
+  myNat.rec_on m
     (show add myNat.zero myNat.zero = myNat.zero, from rfl)
-    (assume n,
-      assume ih: add myNat.zero n = n,
-      show add myNat.zero (myNat.succ n)= (myNat.succ n), from
-        calc
-          add myNat.zero (myNat.succ n) = myNat.succ (add myNat.zero n) : rfl
-          ...                           = myNat.succ n                  : by rw ih
+    (assume m,
+     assume ih: add m myNat.zero = m,
+     show add (myNat.succ m) myNat.zero = (myNat.succ m), from
+     calc
+       add (myNat.succ m) myNat.zero = myNat.succ (add m myNat.zero) : rfl
+       ...                           = myNat.succ m                  : by rw ih
+    )
+
+
+theorem add_succ (m n : myNat) : add m (myNat.succ n) = myNat.succ (add m n) :=
+  myNat.rec_on m
+    (show add myNat.zero (myNat.succ n) = myNat.succ (add myNat.zero n), from rfl)
+    (assume m,
+     assume ih: add m (myNat.succ n) = myNat.succ (add m n),
+     show add (myNat.succ m) (myNat.succ n) = myNat.succ (add (myNat.succ m) n), from
+     calc
+       add (myNat.succ m) (myNat.succ n) = myNat.succ (add m (myNat.succ n)) : rfl
+       ...                               = myNat.succ (myNat.succ (add m n)) : by rw ih
     )
 
 -- Two ways of Having this be one liners...
+--I don't quite understand these tactic rewrites, come back and check on them
+theorem zero_add' (n : myNat) : add n myNat.zero = n :=
+  myNat.rec_on n rfl (λ n ih, by rw [succ_add, ih])
 
--- add_assoc
--- Add-assoc one liner
+theorem zero_add'' (n : myNat) : add n myNat.zero = n :=
+  myNat.rec_on n rfl (λ n ih, by simp only [succ_add, ih])
+
+theorem add_assoc (m n k: myNat): add (add m n) k = add m (add n k) :=
+  myNat.rec_on k
+    (show add (add m n) myNat.zero = add m (add n myNat.zero), from
+      calc
+      add (add m n) myNat.zero = add m n : by apply add_zero
+      ...                      = add m (add n myNat.zero) : by rw add_zero
+    )
+    (assume k,
+     assume ih: add (add m n) k = add m (add n k),
+     show add (add m n) (myNat.succ k) = add m (add n (myNat.succ k)), from
+       calc
+       add (add m n) (myNat.succ k) = myNat.succ (add (add m n) k)   : by apply add_succ
+       ...                          = myNat.succ (add m (add n k))   : by rw ih
+       ...                          = add m (myNat.succ (add n k))   : by rw ←add_succ -- This also works without the left arrow, I feel like it shouldn't
+       ...                          = add m (add n (myNat.succ k))   : by rw ←add_succ
+    ) 
+
+-- Add_assoc one liner
+
 -- Add_comm
--- Succ_add
+theorem add_comm (m n : myNat): add m n = add n m :=
+  myNat.rec_on m
+    (show add myNat.zero n = add n myNat.zero, by rw [add_zero, zero_add])
+    (assume m,
+     assume ih: add m n = add n m,
+     show add (myNat.succ m) n = add n (myNat.succ m), from
+     calc
+       add (myNat.succ m) n = myNat.succ (add m n) : rfl
+       ...                  = myNat.succ (add n m) : by rw ih 
+       ...                  = add n (myNat.succ m) : by rw ←add_succ
+    )
 
+-- Add_comm one liner
 
-#check myNat.zero
-  
 
 --TPIL
 
