@@ -1,0 +1,51 @@
+--------------------------Ch 5------------------------------------
+
+5.6.3 Proposition (4.3.10 and 4.3.12 holds for reals)
+5.6.5 Lemma (Existence of nth roots)
+5.6.6 Lemma ()
+5.6.8 Lemma ()
+5.6.9 Lemma (Properties of rational exponantiation of positive reals)
+--------------------------Ch 6------------------------------------
+
+6.4.5 Proposition (Limits are limit points)
+6.4.12 Proposition (Basic Properties of lim sup and lim inf)
+6.4.13 Lemma (Comparison principle of lim sup lim inf)
+6.4.14 Corollary (Squeeze Test)
+6.4.17 Corollary (Zero Test)
+6.4.18 Theorem (Completeness of the Reals)
+
+6.5.1 Corollary (lim 1/n^(1/k) = 0 for all k >= 1)
+6.5.2 Corollary ()
+6.5.3 Lemma (For any x > 0, lim x^(1/n) = 1)
+
+6.6.4 Lemma (Reflexivity and Transitivity of Subsequences)
+6.6.5 Proposition (All subsequences converging definition of limit)
+6.6.6 Proposition (Existence of a convergent subsequence definition of a limit point)
+6.6.8 Theorem (If a sequence is bounded, there's a subsequence which converges)
+
+6.7.1 Lemma (Continuity of exponentiation)
+6.7.3 Proposition (All 5.6.9 results hold for real #s q and r)
+
+--------------------------Ch 8------------------------------------
+
+
+--------------------------Ch 9------------------------------------
+
+9.1.11 Lemma (Subset, union & intersection properties of closures)
+9.1.12 Lemma (Closure of intervals [a,b] closes (a,b))
+9.1.13 Lemma (Closure of number systems)
+9.1.14 Lemma (Converging sequence definition of adherent point)
+9.1.17 Corollary ()
+9.1.21 Lemma ()
+9.1.24 Theorem ()
+
+
+9.3.9 Proposition (Converging sequence definition of function converegence at a point)
+
+9.4.7 Proposition (Equivelant formulations of continuity)
+9.4.9 Proposition (Arithmetic preserves continuity)
+9.4.10 Proposition (Exponantiation is Continuous in R -> R)
+9.4.11 Proposition (Exponantiation is Contintous in 0 -> inf)
+9.4.12 Proposition (Absolute value is continuous)
+9.4.13 Proposition (Composition preserves continuity)
+
