@@ -1,0 +1,8 @@
+Design Decisions
+Recursive def of Nats or Axiom...
+Homegrown def of Sets or use the one baked in...
+
+Embedded git repository (Mathlib), decided what to do
+Include simple instructions of how to get a live instane up and running
+Decide which files of the whole woopt should be included inside of a .gitignore
+

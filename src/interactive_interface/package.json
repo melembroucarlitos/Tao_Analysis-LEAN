@@ -1,0 +1,39 @@
+{
+  "name": "make-lean-game",
+  "version": "1.0.0",
+  "description": "Lean Game Maker",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mohammad Pedramfar",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@bryangingechen/lean-client-js-browser": "^1.4.0",
+    "@types/node": "^12.12.36",
+    "@types/react": "^16.9.34",
+    "@types/react-dom": "^16.9.6",
+    "ajv": "^6.12.1",
+    "d3": "^5.12.0",
+    "monaco-editor": "^0.10.1",
+    "react": "^16.13.1",
+    "react-accessible-accordion": "^3.0.1",
+    "react-dom": "^16.13.1",
+    "react-force-graph-2d": "^1.12.0",
+    "react-simple-resizer": "^2.1.0",
+    "seedrandom": "^3.0.5",
+    "showdown": "^1.9.1",
+    "terser-webpack-plugin": "^2.3.5"
+  },
+  "devDependencies": {
+    "copy-webpack-plugin": "^5.1.1",
+    "html-webpack-plugin": "^3.2.0",
+    "terser-webpack-plugin-legacy": "^1.2.3",
+    "ts-loader": "^6.2.2",
+    "tslint": "^5.20.1",
+    "typescript": "^3.8.3",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "worker-loader": "^2.0.0"
+  }
+}

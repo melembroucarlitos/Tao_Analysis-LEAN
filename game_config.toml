@@ -1,0 +1,37 @@
+name = "Tao Analysis I & II"
+version = "0.0.1"
+extra_files = "src/extras"
+intro = "src/game/intro.lean"
+
+[[worlds]]
+name = "**Ch.2 Starting at the beginning: Natural Numbers**"
+id = 1
+levels = [
+	"src/game/ch2_Natural_Numbers/1_The_Peano_axioms.lean",
+	"src/game/ch2_Natural_Numbers/2_Addition.lean",
+	"src/game/ch2_Natural_Numbers/3_Multiplication.lean",
+]
+
+[[worlds]]
+name = "**Ch.3 Set Theory**"
+id = 2
+parents = [1]
+levels = [
+	"src/game/ch3_Set_Theory/1_Fundamentals.lean",
+	"src/game/ch3_Set_Theory/2_Russel's_Paradox.lean",
+	"src/game/ch3_Set_Theory/3_Functions.lean",
+	"src/game/ch3_Set_Theory/4_Images_and_Inverse_Images.lean",
+	"src/game/ch3_Set_Theory/5_Cartesian_Products.lean",
+	"src/game/ch3_Set_Theory/6_Cardinality_of_Sets.lean",
+]
+
+[[worlds]]
+name = "**Ch.4 Integers and Rationals**"
+id = 3
+parents = [1, 2]
+levels = [
+	"src/game/ch4_Integers_and_Rationals/1_The_Integers.lean",
+	"src/game/ch4_Integers_and_Rationals/2_The_Rationals.lean",
+	"src/game/ch4_Integers_and_Rationals/3_Absolute_Value_and_Exponentiation.lean",
+	"src/game/ch4_Integers_and_Rationals/4_Gaps_in_the_Rationals.lean",
+]
